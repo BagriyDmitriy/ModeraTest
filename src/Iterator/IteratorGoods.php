@@ -28,15 +28,14 @@ class IteratorGoods implements IteratorInterFace{
     private function find(array $children, $index)
     {
         foreach ($children as $childNode) {
-            if ((int)$childNode->getId() == $index) {// !!! (int)
-                return $childNode;
-            }			
+            if ($childNode->getId() == $index) {
+                    return $childNode;
+            }
             $node = $this->find($childNode->getChildren(), $index);
             if ($node) {
                 return $node;
             }
         }
-        
         return null;
     }
 
@@ -44,18 +43,17 @@ class IteratorGoods implements IteratorInterFace{
      * @param $index
      *
      */
-    public function seek($index){       
-		if ((int)$this->root->getId() == $index){// !!! (int) 
+
+    public function seek($index){
+        if ($this->root->getId() == $index){
 			$this->current = $this->root;
 			return;
 		}
-				
 		$node = $this->find($this->root->getChildren(), $index);
         if (!$node) {							
 		   echo "Can't find element ".$index;
         }
-        $this->current = $node;		
-				
+        $this->current = $node;
     }
 
     /**

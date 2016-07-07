@@ -15,6 +15,7 @@ class IndexController implements IController {
 	 * при указании в адресной строке http://modera_test.loc/, вьюшка index.php 
 	 */
 	public function indexAction() {
+
 	}	
 		
 	/*
@@ -71,7 +72,7 @@ class IndexController implements IController {
 
 		/*PARSE DATA*/		
 		$parser = new G\Parser\TextParser();
-		$dataArray = $parser->parse($text); 		
+		$dataArray = $parser->parse($text);
 		/*PARSE DATA*/		
 
 /***********Create a tree structure******************************/
@@ -80,14 +81,14 @@ class IndexController implements IController {
 	    usort($dataArray, create_function('$a,$b','if ((int)$a["parentId"]===(int)$b["parentId"]) return 0;
 	     return (int)$a["parentId"]>(int)$b["parentId"] ? 1 : -1;'));
         //cоздать основной узел через фабрику.
-		$root = $factory->createRoot(array('nodeId'=>0, 'nodeName'=>'root'));		
+		$root = $factory->createRoot(array('nodeId'=>0, 'nodeName'=>'root'));
 		//собрать дерево
 		foreach($dataArray as $data) {
-			$iterator = $root->getIterator();		
-			$iterator->seek($data['parentId']);			
-			$parent = $iterator->current();				
-			$item = $factory->create($data);			
-			$parent->addChild($item);		
+			$iterator = $root->getIterator();
+            $iterator->seek($data['parentId']);
+			$parent = $iterator->current();
+			$item = $factory->create($data);
+            $parent->addChild($item);
 		}	
 /***********Create a tree structure******************************/		
 		$params[0] = $dataArray;

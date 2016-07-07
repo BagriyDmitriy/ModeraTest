@@ -5,6 +5,7 @@
     header('Content-Type: text/html; charset=utf-8');
     require_once "..\src\controller\IndexController.php";
     $params = $controllerParams;
+    //var_dump($params);
     if($params['success']){
         echo 'я -вьюшка upload.php<br /><h2>File ',$params['filename'],' succesfully loaded:</h2>',
             "Data successfully written to the file(".$params['filename'].")!<br />",

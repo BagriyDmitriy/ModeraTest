@@ -16,12 +16,13 @@ class TextParser implements TextParserInterface{
 		foreach($lines4Parse as $v){	
 			$parsedLine = '';			
 			list($nodeId,$parentId,$nodeName) = explode("|", $v);			//node_id | parent_id | node_name
-			$parsedLine["nodeId"] = $nodeId;
-			$parsedLine["parentId"] = $parentId;
-			$parsedLine["nodeName"] = $nodeName;
-			
-			$parsedData[] = $parsedLine;												
-		}			
+
+            $parsedLine["nodeId"] = trim($nodeId);
+            $parsedLine["parentId"] = trim($parentId);
+            $parsedLine["nodeName"] = trim($nodeName);
+
+			$parsedData[] = $parsedLine;
+		}
 		return $parsedData;
 	}					
 }

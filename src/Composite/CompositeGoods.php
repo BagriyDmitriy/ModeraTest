@@ -27,8 +27,8 @@ class CompositeGoods implements NodeInterface{
 	/*
 	 * возвращает id узла(ветки)
 	 */
-	public function getId(){					
-		return $this->id; 
+	public function getId(){
+		return $this->id;
 	}
 	
 	/*
@@ -41,8 +41,8 @@ class CompositeGoods implements NodeInterface{
 	/*
 	 *	возвращает потомков $node  
 	 */ 
-	public function getChildren(){		
-		return $this -> children;
+	public function getChildren(){
+        return $this -> children;
 	}
 		
 	/*
