@@ -4,7 +4,7 @@ namespace src\controller;
 use general as G;		
 use src\Factory as F;
 use src\Composite as C;
-
+use config as Config;
 /*
  * класс IndexController, контроллер выполняет Action(-ы) в соответствии с адресной строкой.
  */
@@ -23,12 +23,18 @@ class IndexController implements IController {
 	 * обработка контента, передача параметров в listAction(), 
 	 * выполняется при указании в адресной строке http://modera_test.loc/upload, вьюшка upload.php
 	 */
-	public function uploadAction() {					
+	public function uploadAction() {
+        $configParams = new Config\Parameters();
+        $uplPath = $configParams -> getConfigParameters();
+        $parameters = $configParams -> getConfigParameters('fileUploadParameters');
 
-		if (is_uploaded_file($_FILES['uploadfile']['tmp_name'])) { 
-			$uploadfile = $_SERVER['DOCUMENT_ROOT'].'/upl/'.basename($_FILES['uploadfile']['name']);
-			copy($_FILES['uploadfile']['tmp_name'], $uploadfile);
- 
+        $uplTempNamePath = $parameters['uplTempNamePath'];
+        $uplNamePath = $parameters['uplNamePath'];
+
+        if (is_uploaded_file($uplTempNamePath)) {
+            $uploadfile = $uplPath.basename($uplNamePath);
+            copy($uplNamePath, $uploadfile);
+
 			if (!$handle = fopen($uploadfile, 'a')){
 				echo "Can't open file($uploadfile)";
 				exit;
@@ -56,12 +62,15 @@ class IndexController implements IController {
 	 * метод(Action) контроллера listAction(), распарсивание контента в массив,
 	 * выполняется при указании в адресной строке http://modera_test.loc/list, вывод результата - вьюшка list.php
 	 */	
-	public function listAction() { 
-		$path = $_SERVER['DOCUMENT_ROOT'].'/upl/';			
+	public function listAction() {
+        $configParams = new Config\Parameters();
+        $uplPath = $configParams -> getConfigParameters();
+
+        $path = $uplPath;
 		if ($handle = opendir($path)) {		
 			while (false !== ($file = readdir($handle))) { 
-				if ($file != "." && $file != "..") { 				
-					$path = $_SERVER['DOCUMENT_ROOT'].'/upl/'.$file;		
+				if ($file != "." && $file != "..") {
+                    $path = $uplPath.$file;
 				} 
 			}
 		}
