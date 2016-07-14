@@ -3,7 +3,7 @@
     upload - для загрузки файла, upload - обработка post запроса
     upload - обработка запроса загрузки файла*/
     header('Content-Type: text/html; charset=utf-8');
-    require_once "..\src\controller\IndexController.php";
+    require_once "..\src\controller\FileProcessController.php";
     $params = $controllerParams;
     //var_dump($params);
     if($params['success']){

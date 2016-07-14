@@ -62,7 +62,9 @@ class IteratorGoods implements IteratorInterFace{
     public function current(){
         return $this->current;
     }
-
+    /**
+     * go to next NodeInterface
+     */
     public function next(){
         $index = $this->current->getId() + 1;
         $node = $this->find($this->root->getChildren(), $index);

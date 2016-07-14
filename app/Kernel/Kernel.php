@@ -63,10 +63,10 @@ final class Kernel{
 				
 	/*
 	 * метод process($param), в нём отрабатывает контроллер		
-	 * отделяет класс (src\Controller\IndexController) и его метод (indexAction)
-	 * и создаваёт $controller = new src\Controller\IndexController(),возвращает данные для render().
+	 * отделяет класс (src\Controller\FileProcessController) и его метод (indexAction)
+	 * и создаваёт $controller = new src\Controller\FileProcessController(),возвращает данные для render().
 	 * Нужно выполнить метод контроллера и получить от него данные и вернуть.
-     * $param = ['/', 'src\Controller\IndexController.indexAction'];
+     * $param = ['/', 'src\Controller\FileProcessController.indexAction'];
 	 */
 	public function process($param){			
 		$controllerData = $param['controller'];  

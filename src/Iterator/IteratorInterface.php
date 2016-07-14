@@ -13,7 +13,7 @@ interface IteratorInterface
    public function current();
   
  /**
-   * Return next composite element 
+   * go to next composite element
    */
    public function next();
  

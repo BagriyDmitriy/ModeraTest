@@ -20,14 +20,7 @@ namespace general\File\TextFile;
 	public function __construct($path){
 			$this ->pathToFile = $path;
 	}
-	
-	/*
-	 * геттер путь+назв файла
-	 */
-	public function getPathToFile(){					
-		return $this -> pathToFile;
-	}
-	
+
 	/*
 	 * readLine чтение файла построчно	
 	 */

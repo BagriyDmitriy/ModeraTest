@@ -2,8 +2,20 @@
 namespace general\File;
 
 interface FileInterface{
- public function getContent(); 
- public function setContent($content); 
+
+    /*
+     * read чтение всего файла
+     */
+ public function getContent();
+
+    /*
+     * перезапись файла  /(установка данных(замена) - set-метод)
+     */
+ public function setContent($content);
+
+    /*
+     * очистка файла
+     */
  public function removeContent();
 }
 ?>

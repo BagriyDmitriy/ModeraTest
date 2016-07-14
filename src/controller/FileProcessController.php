@@ -6,9 +6,9 @@ use src\Factory as F;
 use src\Composite as C;
 use config as Config;
 /*
- * класс IndexController, контроллер выполняет Action(-ы) в соответствии с адресной строкой.
+ * класс FileProcessController, контроллер выполняет Action(-ы) в соответствии с адресной строкой.
  */
-class IndexController implements IController {
+class FileProcessController {
 	
 	/*
      * метод(Action) контроллера indexAction(), выполняется по -умолчанию
