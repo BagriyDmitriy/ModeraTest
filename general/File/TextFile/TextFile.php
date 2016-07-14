@@ -2,36 +2,37 @@
 namespace general\File\TextFile;
 
  use general\File as F;
- 
-/* 
- * класс TextFile предназначен для работы с текстовыми файлами.
- */
+
+    /*
+     * TextFile class is designed to work with text files.
+     */
  class TextFile extends F\File implements TextFileInterface{
-	/*
-	 * описание(как минимум) абстрактных методов интерфейса 
-	 */
+
+    /*
+     * Description (at least) an abstract interface methods
+     */
 	public function getContent(){} 
 	public function setContent($content){} 
 	public function removeContent(){}
-	
-	/*
-	 * конструктор -инициализация обьекта, передача названия файла
-	 */
+
+    /*
+     * Constructor - object initialization, transfer the file name
+     */
 	public function __construct($path){
 			$this ->pathToFile = $path;
 	}
 
-	/*
-	 * readLine чтение файла построчно	
-	 */
+    /*
+     * read file, getAllLines() get file content
+     */
 	public function getAllLines(){				
 		$textLines[] = file($this->getPathToFile());
 		return $textLines;			
 	}
-	
-	/*
-	 * кол-во строк файла
-	 */
+
+     /*
+      * getCountLines() - count lines in file
+      */
 	public function getCountLines(){							
 		$CountLines = count(file($this->getPathToFile()));						
 		return $CountLines;			

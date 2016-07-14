@@ -4,8 +4,8 @@ use \app\Kernel\Kernel;
 use \src\controller;
 
 /*
- * загружаются классы проекта
- */
+ * Loading design classes
+ */
 spl_autoload_register(
     function($class){
         $path = realpath (__DIR__ . '/../'.str_replace("\\","/",$class.".php"));
@@ -18,34 +18,35 @@ spl_autoload_register(
     }
 );
 /*
- * загружается конфиг, передается в роутер, получает данные по контроллеру,
- * выполняется метод нужного контроллера, получает результат выполнения, это в init().
- * Вычитавает route.yml преобразовает его в массив и передает в конструктор роутера,
- * вычитка выполняется в кернеле - метод readRouteConfig($file).
- */
+ * Loaded configuration is transmitted to the router receives data from the controller,
+ * performed the desired controller method gets the result of this in the init().
+ * reads route.yml convert it into an array and passed to the constructor of the router,
+ * proofreading is performed in Kernel - method readRouteConfig($file).
+ */
 $kernel = Kernel::getInstance();
 $file = __DIR__ . '/../config/route.yml';
 $kernel->init($file);
 
-// метод getRoute(), возвращает объект Route.
+
+// getRoute() method returns the Route object.
 $route = $kernel->getRoute();
 $url = $_SERVER['REQUEST_URI'];
 /*
- * метод match($url) (match - случать, подбирать под пару, соответствовать)
- * Перебирает $this->routeParams и находит нужный параметр.
- * Возвращает нужные параметры - возвращает array('controller' => 'контроллер', 'action' => 'метод').
- */
+ * Method match($url) (match - case pick up a pair, match)
+ * goes through $this -> routeParams and is an option.
+ * return the desired settings - returns array( 'controller' => 'controller', 'action' => 'method' ).
+ */
 $routeParams = $route->match($url);
 /*
- * метод process($param), в нём отрабатывает контроллер
- * отделяет класс (src\Controller\FileProcessController) и его метод (indexAction)
- * и создаваёт $controller = new src\Controller\FileProcessController(),возвращает данные для render().
- * Нужно выполнить метод контроллера и получить от него данные и вернуть.
- * $param = ['/', 'src\Controller\FileProcessController.indexAction'];
+ * Method process($param), it fulfills in the controller
+ * separate class (src\Controller\FileProcessController) and method (indexAction)
+ * and creates a $controller = new src\Controller\FileProcessController(), returns the data to render().
+ * it is necessary to perform a controller method and obtain the data and return from it.
+ * $param = [ '/', 'src\Controller\FileProcessController.indexAction' ];
  */
 $controllerParams = $kernel->process($routeParams);
 /*
- * метод render($routeParams, $controllerParams) выполняет отображение результата работы
+ * The method render($routeParams, $controllerParams) performs mapping result of the work
  */
 $kernel->render($routeParams, $controllerParams); 
 

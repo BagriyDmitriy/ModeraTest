@@ -4,27 +4,27 @@ namespace src\Composite;
 interface NodeInterface{
 
     /*
-     * возвращает id узла(ветки)
+     * Returns the node id (branch)
      */
     public function getId();
 
     /*
-     * возвращает имя узла(ветки)
+     *  Returns the node name (branch)
      */
     public function getName();
 
     /*
-     * добавляет ветку(узел), $node
+     * Adds a branch (node), $node
      */
     public function addChild(NodeInterface $node);
 
     /*
-     *	возвращает потомков $node
+     * Returns the descendants of $node
      */
     public function getChildren();
 
     /*
-     * возвращает одномерный массив данных для вывода на экран.
+     * Returns a one-dimensional array of data to display.
      */
     public function getDataToPrint($hyphen);
 }

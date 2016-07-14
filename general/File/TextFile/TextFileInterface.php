@@ -6,12 +6,12 @@ use general\File as F;
 interface TextFileInterface extends F\FileInterface{
 
     /*
-     * readLine чтение файла построчно
+     * getAllLines() get file content
      */
 	 public function getAllLines();
 
     /*
-     * кол-во строк файла
+     * read file, getAllLines() get file content
      */
 	 public function getCountLines();
 } 

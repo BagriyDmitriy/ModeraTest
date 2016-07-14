@@ -1,60 +1,60 @@
 <?php
 namespace general\File;
 
-/* 
- * класс File предназначен для работы с файлами.
- */
+/*
+ * File class is designed to work with files.
+ */
 class File implements FileInterface{
 
-	protected $pathToFile;  	
-	
-	/*
-	 * конструктор -инициализация обьекта, передача названия файла
-	 */
+	protected $pathToFile;
+
+    /*
+     * Constructor - object initialization, transfer the file name
+     */
 	public function __construct($path){
 			$this ->pathToFile = $path;
 	}
-	
-	/*
-	 * геттер путь+назв файла
-	 */
+
+    /*
+     * Getter, path + file name
+     */
 	public function getPathToFile(){					
 		return $this -> pathToFile;
 	}	
 	
 	/*
-	 * read чтение всего файла
+	 * Read, read the entire file
 	 */
 	public function getContent(){
 		if(!file_exists($source = $this->getPathToFile())){
 			return false;
 		}
 		return trim(file_get_contents($this->getPathToFile()));		 
-	}	
-	
-	/*
-	 * перезапись файла  /(установка данных(замена) - set-метод)
-	 */
+	}
+
+    /*
+     * Overwrite File/(setting data(replacement) - set-method)
+     */
 	public function setContent($content){ 
 		$source = $this->getPathToFile();				//
 		if(false === file_put_contents($source,$content)) {
 			throw new Exception("Can't set content to file");
 		}
 	}
-	
-	/*
-	 * дозапись в файл  /(добавление данных - аппенд-метод)
-	 */
+
+    /*
+     * Append to File/(adding data - APPEND-method)
+     */
 	public function addLine($content){ 
 		$source = $this->getPathToFile();				//
 		if(false === file_put_contents($source,$content,FILE_APPEND)){
 			throw new Exception("Can't add line to file");				
 		}
 	}
-	
-	/*
-	 * очистка файла
-	 */
+
+    /*
+     * File Cleaning
+     */
 	public function removeContent(){							
 		$source = fopen($this->getPathToFile(), "w");		
 		fclose($source);

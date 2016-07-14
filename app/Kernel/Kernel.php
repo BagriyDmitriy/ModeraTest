@@ -5,69 +5,69 @@ use \app\Route\Route;
 use \src\controller;
 
 /*
- * Kernel - Класс kernel синглтон, в котром загружается конфиг, передается в роутер, получает данные по контроллеру,
- * выполняется метод нужного контроллера, получает результат выполнения, это в init().
- * Вычитавает route.yml преобразовает его в массив и передает в конструктор роутера,
- * вычитка выполняется в кернеле - метод readRouteConfig($file).
+ * Kernel - Class kernel singleton, which is loaded configuration is transmitted to the router receives data from the controller,
+ * performed the desired controller method gets the result of this in the init ().
+ * reads route.yml converts it into an array and passed to the constructor of the router,
+ * proofreading is performed in Kernel - method readRouteConfig ($ file).
  */
 final class Kernel{
-	
-	/*
-	 * статическая переменная, в которой мы будем хранить экземпляр класса
-	 */
-	static $_instance; 
-	
-	/*
-	 * свойство, экземпляр класса Route
-	 */	
+
+    /*
+     * Static variable in which we store the instance of the class
+     */
+	static $_instance;
+
+    /*
+     * Property, Route class instance
+     */
 	public $route;
-	
-	/*
-	 * метод getInstance() - типичный синглтон.
-	 */	
-	public static function getInstance() { 
+
+    /*
+     * Method getInstance() - a typical singleton.
+     */
+	public static function getInstance() {
 		if(!(self::$_instance instanceof self)) //типичный синглтон
 			self::$_instance = new self();
 		return self::$_instance;
 	}
-	
-	/*
-	 * приватный конструктор ограничивает реализацию getInstance()	
-	 */
-	private function __construct(){ //конструктор закрытый private		!!!и пустой!!!	
+
+    /*
+     * Private constructor limits the implementation getInstance ()
+     */
+	private function __construct(){// Constructor closed the private and empty !!!
 	}
-	
-	/*
-	 * метод readRouteConfig($file) вычитавает route.yml преобразовывает его в масcив и передаёт в конструктор роутера						 			 
-	 */
+
+    /*
+     * Method readRouteConfig ($file) proofreads route.yml converts it into an array and passes into the router constructor
+     */
 	protected function readRouteConfig($file){			// protected!!!		
 		 $pathes = Yaml::parse(file_get_contents($file));
 		 return $pathes;
 	}
-	    	
-	/*
-	 * метод init($file) - инициализирует, ничего не возвращает. Инициализирует объект Роут и передаёт распарсенный массив.
-	 * после метода init($file) в Kernel - заполненный Route.
-	 */		
-	public function init($file) {//!!!НЕ нужен ретурн!!! 
+
+    /*
+     * Method init($file) - initializes, does not return anything. Initializes Route object and passes the parsed array.
+     * After the method init($file) in the Kernel - filled Route.
+     */
+	public function init($file) {// !!! DO NOT need a return !!!
 		$routeConfig = $this->readRouteConfig($file); 		
 		$this->route = new Route($routeConfig);	
     }
-	
-	/*
-	 * метод getRoute(), возвращает объект Route.		
-	 */
+
+    /*
+     * GetRoute() method returns the Route object.
+     */
 	public function getRoute(){	
 		return $this->route;		
-    } 
-				
-	/*
-	 * метод process($param), в нём отрабатывает контроллер		
-	 * отделяет класс (src\Controller\FileProcessController) и его метод (indexAction)
-	 * и создаваёт $controller = new src\Controller\FileProcessController(),возвращает данные для render().
-	 * Нужно выполнить метод контроллера и получить от него данные и вернуть.
-     * $param = ['/', 'src\Controller\FileProcessController.indexAction'];
-	 */
+    }
+
+    /*
+     * method process($param), it fulfills in the controller
+     * separate class (src\Controller\FileProcessController) and method (indexAction)
+     * and creates a $controller = new src\Controller\FileProcessController(), returns the data to render().
+     * it is necessary to perform a controller method and obtain the data and return from it.
+     * $param = [ '/', 'src\Controller\FileProcessController.indexAction' ];
+     */
 	public function process($param){			
 		$controllerData = $param['controller'];  
 		$controller = new $controllerData();
@@ -76,17 +76,17 @@ final class Kernel{
 
 		return $controller -> $actionData();
 	}
-		
-	/*
-	 * метод getViewPath(), формирование пути для render()		
-	 */
+
+    /*
+     * getViewPath() method, the formation of ways to render()
+     */
 	public function getViewPath() {
         return realpath( __DIR__ . '/../../src/view/');
-	}	
-	
-	/*
-     * метод render($routeParams, $controllerParams) выполняет отображение результата работы
-	 */	
+	}
+
+    /*
+     * The method render ($routeParams, $controllerParams) performs mapping result of the work
+     */
 	public function render($routeParams, $controllerParams){ 					
 		$splits = explode('\\', $routeParams['controller']);
 		$path_controller = str_replace('Controller','',array_pop($splits));			

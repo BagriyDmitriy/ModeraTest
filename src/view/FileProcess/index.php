@@ -1,7 +1,8 @@
 <h1>
-<?php header('Content-Type: text/html; charset=utf-8'); 
-/*index - по -умолчанию
-View/FileProcess/index.php - отображает результат метода index в контроллере  FileProcessController*/
+<?php header('Content-Type: text/html; charset=utf-8');
+/* Index - default
+ * view/FileProcess/index.php - displays the result of the method index of controller in the FileProcessController
+ */
 ?>Welcome to test program!!!
 </h1>
 

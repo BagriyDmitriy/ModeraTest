@@ -6,23 +6,23 @@ use src\Factory as F;
 use src\Composite as C;
 use config as Config;
 /*
- * класс FileProcessController, контроллер выполняет Action(-ы) в соответствии с адресной строкой.
+ * Class File Process Controller, the controller performs Actions according to the address bar.
  */
 class FileProcessController {
-	
-	/*
-     * метод(Action) контроллера indexAction(), выполняется по -умолчанию
-	 * при указании в адресной строке http://modera_test.loc/, вьюшка index.php 
-	 */
+
+    /*
+     * Method (Action) indexAction() of controller is executed by default
+     * when specifying the address bar http://modera_test.loc/, view index.php
+     */
 	public function indexAction() {
 
-	}	
-		
-	/*
-     * метод(Action) контроллера uploadAction(), загрузка файла на сервер,
-	 * обработка контента, передача параметров в listAction(), 
-	 * выполняется при указании в адресной строке http://modera_test.loc/upload, вьюшка upload.php
-	 */
+	}
+
+    /*
+     * Method (Action) uploadAction() of controller to the server to download a file,
+     * processing content, the transmission parameters listAction(),
+     * is performed by specifying the address bar http: //modera_test.loc/upload, view upload.php
+     */
 	public function uploadAction() {
         $configParams = new Config\Parameters();
         $uplPath = $configParams -> getConfigParameters();
@@ -57,11 +57,11 @@ class FileProcessController {
 		}	
 		return  $params;
 	}
-	
-	/*
-	 * метод(Action) контроллера listAction(), распарсивание контента в массив,
-	 * выполняется при указании в адресной строке http://modera_test.loc/list, вывод результата - вьюшка list.php
-	 */	
+
+    /*
+     * Method (Action) listAction() of controller, parsed into an array of content,
+     * is performed by specifying the address bar http://modera_test.loc/list, result output - view list.php
+     */
 	public function listAction() {
         $configParams = new Config\Parameters();
         $uplPath = $configParams -> getConfigParameters();
@@ -86,12 +86,12 @@ class FileProcessController {
 
 /***********Create a tree structure******************************/
 		$factory = new F\GoodsFactory();
-		//отсортировать массив с данными так, чтоб корневые ветви были первые.
+        // Sort the array with the data so that the root was the first branch.
 	    usort($dataArray, create_function('$a,$b','if ((int)$a["parentId"]===(int)$b["parentId"]) return 0;
 	     return (int)$a["parentId"]>(int)$b["parentId"] ? 1 : -1;'));
-        //cоздать основной узел через фабрику.
+        // To create the main node through the factory.
 		$root = $factory->createRoot(array('nodeId'=>0, 'nodeName'=>'root'));
-		//собрать дерево
+        // Gathering wood
 		foreach($dataArray as $data) {
 			$iterator = $root->getIterator();
             $iterator->seek($data['parentId']);

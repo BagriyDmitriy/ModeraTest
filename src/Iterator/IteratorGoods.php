@@ -1,8 +1,8 @@
 <?php
 namespace src\Iterator;
 /*
- * Итератор -класс абстрагирующий за единым интерфейсом доступ к элементам коллекции.
- */
+ * Iterator class of abstracts for a single interface access to a collection.
+ */
 class IteratorGoods implements IteratorInterFace{
     /**
      * @var NodeInterface

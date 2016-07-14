@@ -1,15 +1,15 @@
 <?php
 
-namespace general\Parser;	
+namespace general\Parser;
 
 /*
- * класс TextParser - преобразование данных(из текста в массив).
- */	
+ * TextParser class - data conversion (from the text of the array).
+ */
 class TextParser implements TextParserInterface{
-	
-	/*
-	 * метод parse($text) преобразует текст в массив, результат = массив из 12и эл-тов(массивов строк), в которых по 3 эл-та.  
-	 */
+
+    /*
+     * Method parse($text) converts text to array, result = array of 12 elements (array lines) in which the 3 element.
+     */
 	public function parse($text){	
 		$lines4Parse = preg_split('/\n/',$text);
 		

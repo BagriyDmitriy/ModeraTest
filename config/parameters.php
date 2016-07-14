@@ -1,6 +1,9 @@
 <?php
 namespace config;
 
+/*
+ * class Parameters containing config variables, array variables
+ */
 class Parameters
 {
 

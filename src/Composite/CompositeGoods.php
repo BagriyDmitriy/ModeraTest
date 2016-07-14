@@ -1,19 +1,19 @@
 <?php
 namespace src\Composite;
 
-/* 
- * класс Composite (Компоновщик),компоновщик(по айди выстраивает ветки(children,дети))
- * Компоновщик - и есть дерево, он хранит данные.
- *		node_id | parent_id | node_name
- *		node_id: числовой идентификатор узла
- *		parent_id: идентификатор родительского узла
- * Элементы Cоmposite создает Factory.
- * Composite - структура(коллекция) элементов(данных, нод) в виде дерева.
- * Компоновщик (англ. Composite pattern) — структурный шаблон проектирования,
- * относится к структурным паттернам, объединяет объекты в древовидную структуру
- * для представления иерархии от частного к целому. 
- * Компоновщик позволяет клиентам обращаться к отдельным объектам и к группам объектов одинаково.
- */
+/*
+ * Class of the Composite, Composite (by id builds branches (children))
+ * Composite - and there is a tree, it stores data.
+ * Node_id | parent_id | node_name
+ * Node_id: numeric node ID
+ * Parent_id: ID of the parent node
+ * Composite Elements creates Factory.
+ * Composite - structure (collection) of the elements (data nodes) in a tree.
+ * Composite (Composite pattern.) - Structural pattern,
+ * refers to the structural patterns, brings together objects in a tree structure
+ * to represent the hierarchy from the private to the whole.
+ * Composite allows clients to access the individual objects and groups of objects of the same.
+ */
 class CompositeGoods implements NodeInterface{
 	private $id;
 	private $name;  
@@ -22,49 +22,49 @@ class CompositeGoods implements NodeInterface{
 	public function __construct($id,$name){
 		$this->id = $id;
 		$this->name = $name;
-	}		
-	
-	/*
-	 * возвращает id узла(ветки)
-	 */
+	}
+
+    /*
+     * Returns the node id (branch)
+     */
 	public function getId(){
 		return $this->id;
 	}
-	
-	/*
-	 * возвращает имя узла(ветки)
-	 */
+
+    /*
+     *  Returns the node name (branch)
+     */
 	public function getName(){
 		return $this->name; 
 	}
-	
-	/*
-	 *	возвращает потомков $node  
-	 */ 
+
+    /*
+     * Returns the descendants of $node
+     */
 	public function getChildren(){
         return $this -> children;
 	}
-		
-	/*
-	 * добавляет ветку(узел), $node 
-	 */
+
+    /*
+     * Adds a branch (node), $node
+     */
 	public function addChild(NodeInterface $node){
 		$this->children[] = $node;
-	}			
-	
-	/*
-	 * выводит дерево на экран
-	 */
+	}
+
+    /*
+     * Displays a tree on screen
+     */
 	public function display(){				
 		print($this->id)." ".($this->name)."<br>";	
 		foreach($this->children as $child){			
 			$child->display();
 		}		
 	}
-		
-	/*
-	 * возвращает одномерный массив данных для вывода на экран.
-	 */		
+
+    /*
+     * Returns a one-dimensional array of data to display.
+     */
 	public function getDataToPrint($hyphen = ''){
 		$hyphen .= ' - ';
 		$dataToPrint = array($hyphen.$this->name);

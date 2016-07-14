@@ -4,17 +4,17 @@ namespace general\File;
 interface FileInterface{
 
     /*
-     * read чтение всего файла
+     * Read, read the entire file
      */
  public function getContent();
 
     /*
-     * перезапись файла  /(установка данных(замена) - set-метод)
+     * Overwrite File/(setting data(replacement) - set-method)
      */
  public function setContent($content);
 
     /*
-     * очистка файла
+     * File Cleaning
      */
  public function removeContent();
 }

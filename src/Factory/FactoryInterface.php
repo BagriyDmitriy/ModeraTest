@@ -4,12 +4,12 @@ namespace src\Factory;
 interface FactoryInterface{
 
     /*
-     * метод create(array $params) создаёт композит. $params - это данные из файла, строки.
-     */
+     * Method create(array $params) creates a composite. $params - is the data from the file lines.
+     */
     public function create(array $params);
 
     /*
-     * метод createRoot(array $params) создаёт композит. $params - это данные для создания корня композиции.
+     * Method createRoot(array $params) creates a composite. $params - this data to create the composition of the root.
      */
     public function createRoot(array $params);
 }

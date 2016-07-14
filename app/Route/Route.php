@@ -3,26 +3,27 @@
 namespace app\Route;
 
 /*
- * класс Route получает данные из файла -конфига, формирует пути.
+ * Router class gets the data from the config-file, creates the path.
  */
 class Route{
+
     /*
-     * свойство $routeParams, массив содержит параметры роутера
+     * Property $routeParams, the array contains the parameters of the router
      */
     public $routeParams;
 
     /*
-     * конструктор __construct(array $config) получает уже массив $config - данные из файла.
-     */
+     * Constructor __construct (array $config) has received an array $config - data from the file.
+     */
     public function __construct(array $config){
         $this->routeParams = $config;
     }
 
     /*
-     * метод match($url) (match - случать, подбирать под пару, соответствовать)
-     * Перебирает $this->routeParams и находит нужный параметр.
-     * Возвращает нужные параметры - возвращает array('controller' => 'контроллер', 'action' => 'метод').
-     */
+     * Method match ($url) (match - case pick up a pair, match)
+     * goes through $this -> routeParams and is an option.
+     * return the desired settings - returns array ( 'controller' => 'controller', 'action' => 'method').
+     */
     public function match($url){
         foreach($this->routeParams as $param){
             if ( $param[0] == $url ){
