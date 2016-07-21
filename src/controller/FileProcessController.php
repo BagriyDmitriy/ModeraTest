@@ -86,7 +86,7 @@ class FileProcessController {
 
 /***********Create a tree structure******************************/
 		$factory = new F\GoodsFactory();
-        // Sort the array with the data so that the root was the first branch.
+        // Sort the array with the data so that the branches was the first.
 	    usort($dataArray, create_function('$a,$b','if ((int)$a["parentId"]===(int)$b["parentId"]) return 0;
 	     return (int)$a["parentId"]>(int)$b["parentId"] ? 1 : -1;'));
         // To create the main node through the factory.
