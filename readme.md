@@ -1,8 +1,8 @@
 ---------------------------------------------------------------------------
 We have a text file with structured tree information in form of:
-   node_id|parent_id|node_name
-   node_id: numeric node id
-   parent_id: id of parent node
+    node_id|parent_id|node_name
+    node_id: numeric node id
+    parent_id: id of parent node
 
 Main task is to represent this tree with correct paddings for every level, 
 level one - zero paddings, level two - one padding and so on.
@@ -10,6 +10,7 @@ level one - zero paddings, level two - one padding and so on.
 Try to write code as simple as possible and we want to see high perfomance solution
 ---------------------------------------------------------------------------
 Input data:
+---
 1|0|Electronics
 2|0|Video
 3|0|Photo
@@ -23,8 +24,8 @@ Input data:
 11|9|Canon
 12|11|20D
 ----------------------------------------------------------------------------
----
 Output data:
+---
 Electronics
 -MP3 player
 --iPod
