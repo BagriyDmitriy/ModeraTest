@@ -11,6 +11,7 @@ Try to write code as simple as possible and we want to see high perfomance solut
 ---------------------------------------------------------------------------
 Input data:
 ---
+```
 1|0|Electronics
 2|0|Video
 3|0|Photo
@@ -23,9 +24,11 @@ Input data:
 10|9|Nikon
 11|9|Canon
 12|11|20D
-----------------------------------------------------------------------------
+```
+---
 Output data:
 ---
+```
 Electronics
 -MP3 player
 --iPod
@@ -38,3 +41,4 @@ Photo
 ---Nikon
 ---Canon
 ----20D
+```
