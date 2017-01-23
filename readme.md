@@ -53,17 +53,12 @@ Photo
 Fragments of the project work:
 =====================
     _views:_
----
 	**index**
 ---------------------------------------------------------------------------
 ![screenshot of file contents](https://github.com/mslobodyanyuk/ModeraTest/blob/master/public/images/index.png)
----    
 	**upload**	
 ---------------------------------------------------------------------------
 ![screenshot of file contents](https://github.com/mslobodyanyuk/ModeraTest/blob/master/public/images/upload.png)
----
-
----
     **list**
 ---------------------------------------------------------------------------	
 ![screenshot of file contents](https://github.com/mslobodyanyuk/ModeraTest/blob/master/public/images/list.png)	
@@ -85,7 +80,7 @@ On one level, with `general` `public` and create a folder `src` - it all the cla
 It create a controller, view. db-structure model in `general`, **we do not have it here**.
 
 class distribution of folders for namespaces:
-      src
+    src
     Factory \ GoodsFactory
     Composite \ CompositeGoods
     Iterator \ IteratorGoods
@@ -99,7 +94,7 @@ class distribution of folders for namespaces:
 ---
 
     File, TextFile, Parser - Reusable may be used.
-GoodsFactory, CompositeGoods, IteratorGoods - only in this project.
+    GoodsFactory, CompositeGoods, IteratorGoods - only in this project.
 
 
 The applied (used in) patterns.
@@ -108,9 +103,9 @@ Design pattern - a task taken from the best practices of software development, t
 Matt Zandstra - PHP. Objects, patterns and programming techniques - 2011.
 Since the formulation of job wanted to see High Performance solution, applied use of the following design patterns:
 
->    Composite 
->    Factory Method 
->    Iterator 
+>Composite 
+>Factory Method 
+>Iterator 
 
 **Composite**. It unites objects in a tree structure to represent the hierarchy from the private to the whole.
 ---
