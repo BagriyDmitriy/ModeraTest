@@ -52,14 +52,14 @@ Photo
 
 Fragments of the project work:
 =====================
-    _views:_
-	**index**
+   ***views:***
+   **index**
 ---------------------------------------------------------------------------
 ![screenshot of file contents](https://github.com/mslobodyanyuk/ModeraTest/blob/master/public/images/index.png)
-	**upload**	
+   **upload**	
 ---------------------------------------------------------------------------
 ![screenshot of file contents](https://github.com/mslobodyanyuk/ModeraTest/blob/master/public/images/upload.png)
-    **list**
+   **list**
 ---------------------------------------------------------------------------	
 ![screenshot of file contents](https://github.com/mslobodyanyuk/ModeraTest/blob/master/public/images/list.png)	
 ![screenshot of file contents](https://github.com/mslobodyanyuk/ModeraTest/blob/master/public/images/list1.png)
@@ -85,6 +85,7 @@ class distribution of folders for namespaces:
     Composite \ CompositeGoods
     Iterator \ IteratorGoods
     the rest - general
+	
 ---
     src                        | general
 -------------------------------|----------------------
@@ -103,23 +104,21 @@ Design pattern - a task taken from the best practices of software development, t
 Matt Zandstra - PHP. Objects, patterns and programming techniques - 2011.
 Since the formulation of job wanted to see High Performance solution, applied use of the following design patterns:
 
->Composite 
->Factory Method 
->Iterator 
+    Composite 
+    Factory Method 
+    Iterator 
 
 **Composite**. It unites objects in a tree structure to represent the hierarchy from the private to the whole.
----
+
 Builder allows clients to separate objects and groups of objects equally. The main purpose of the pattern
 It is to provide a single interface to both the composite and the final object that the client did not think of, from the object of how it works.
 <https://en.wikipedia.org/wiki/Composite_pattern>
 
 **Factory Method**. Used to define and maintain relationships between the objects.
----
 Factory methods eliminate the need for the designer to embed in the code depending on the application classes.
 <https://en.wikipedia.org/wiki/Factory_method_pattern>
 
 **Iterator**. Object that allows to sort all items in the collection without taking into account the peculiarities of its implementation.
----
 Iterator. It represents an object that allows you to get consistent access to the elements of the object-unit without the use of an
 each of the objects included in the aggregation.
 <https://en.wikipedia.org/wiki/Iterator_pattern>
