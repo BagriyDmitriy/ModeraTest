@@ -56,23 +56,23 @@ Fragments of the project work:
    **index**
 ---------------------------------------------------------------------------
 ![screenshot of file contents](https://github.com/mslobodyanyuk/ModeraTest/blob/master/public/images/index.png)
+---------------------------------------------------------------------------
    **upload**	
 ---------------------------------------------------------------------------
 ![screenshot of file contents](https://github.com/mslobodyanyuk/ModeraTest/blob/master/public/images/upload.png)
+---------------------------------------------------------------------------
    **list**
 ---------------------------------------------------------------------------	
 ![screenshot of file contents](https://github.com/mslobodyanyuk/ModeraTest/blob/master/public/images/list.png)	
 ![screenshot of file contents](https://github.com/mslobodyanyuk/ModeraTest/blob/master/public/images/list1.png)
----
+---------------------------------------------------------------------------
 
 
 
 
 After `composer install` ModeraTest folder in the Project -> copy the contents of the folder are deleted.
-=====================
 ---
 PHP namespace provides the ability to group logically related classes, interfaces, functions and constants.
-=====================
 Folders and namespaces must be the same, to make sure it was convenient to their classes to use in other projects, only moving the folder.
 All classes must be based on a level higher than the `\ public`.
 The public is only the entry point, it is for the safe.
@@ -80,11 +80,11 @@ On one level, with `general` `public` and create a folder `src` - it all the cla
 It create a controller, view. db-structure model in `general`, **we do not have it here**.
 
 class distribution of folders for namespaces:
-    src
-    Factory \ GoodsFactory
-    Composite \ CompositeGoods
-    Iterator \ IteratorGoods
-    the rest - general
+>src
+>Factory \ GoodsFactory
+>Composite \ CompositeGoods
+>Iterator \ IteratorGoods
+>the rest - general
 	
 ---
     src                        | general
