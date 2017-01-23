@@ -88,6 +88,8 @@ _Actually the contents of the file `write.txt`:_
 
 After `composer install` ModeraTest folder in the Project copy the contents of the folder and remove folder.
 ---
+Namespaces
+=====================
 PHP namespace provides the ability to group logically related classes, interfaces, functions and constants.
 Folders and namespaces must be the same, to make sure it was convenient to their classes to use in other projects, only moving the folder.
 All classes must be based on a level higher than the `\ public`.
