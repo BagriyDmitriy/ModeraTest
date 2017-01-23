@@ -12,8 +12,6 @@ Main task is to represent this tree with correct paddings for every level,
 level one - zero paddings, level two - one padding and so on.
 
 Try to write code as simple as possible and we want to see high perfomance solution
----
-
 ---------------------------------------------------------------------------
 Input data:
 ---
