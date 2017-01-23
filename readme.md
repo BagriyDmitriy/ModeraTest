@@ -3,13 +3,14 @@ A task:
 ---------------------------------------------------------------------------
 We have a text file with structured tree information in form of:
 ---
->    node_id|parent_id|node_name
->    node_id: numeric node id
->    parent_id: id of parent node
-
+```
+    node_id|parent_id|node_name
+    node_id: numeric node id
+    parent_id: id of parent node
+```
 Main task is to represent this tree with correct paddings for every level, 
 level one - zero paddings, level two - one padding and so on.
----
+
 Try to write code as simple as possible and we want to see high perfomance solution
 ---
 
@@ -55,11 +56,11 @@ Fragments of the project work:
 ---
 	`index`
 ---------------------------------------------------------------------------
-![screenshot of file contents](https://github.com/mslobodyanyuk/KTTsoft-test/blob/master/public/images/index.png)
+![screenshot of file contents](https://github.com/mslobodyanyuk/ModeraTest/tree/master/public/images/index.png)
 ---    
 	`upload`	
 ---------------------------------------------------------------------------
-![screenshot of file contents](https://github.com/mslobodyanyuk/KTTsoft-test/blob/master/public/images/upload.png)
+![screenshot of file contents](https://github.com/mslobodyanyuk/ModeraTest/tree/master/public/images/upload.png)
 ---
 Actually the contents of the file `write.txt`:
 ---------------------------------------------------------------------------
@@ -79,8 +80,8 @@ Actually the contents of the file `write.txt`:
 ---
     `list`
 ---------------------------------------------------------------------------	
-![screenshot of file contents](https://github.com/mslobodyanyuk/KTTsoft-test/blob/master/public/images/list.png)	
-![screenshot of file contents](https://github.com/mslobodyanyuk/KTTsoft-test/blob/master/public/images/list1.png)
+![screenshot of file contents](https://github.com/mslobodyanyuk/ModeraTest/tree/master/public/images/list.png)	
+![screenshot of file contents](https://github.com/mslobodyanyuk/ModeraTest/tree/master/public/images/list1.png)
 ---
 
 
@@ -134,16 +135,16 @@ Since the formulation of job wanted to see High Performance solution, applied us
 Builder allows clients to separate objects and groups of objects equally. The main purpose of the pattern
 It is to provide a single interface to both the composite and the final object that the client did not think of, from the object of how it works.
 ---
-<< https://en.wikipedia.org/wiki/Composite_pattern >>
+<<https://en.wikipedia.org/wiki/Composite_pattern>>
 ---
 **Factory Method**. Used to define and maintain relationships between the objects.
 Factory methods eliminate the need for the designer to embed in the code depending on the application classes.
 ---
-<< https://en.wikipedia.org/wiki/Factory_method_pattern >>
+<<https://en.wikipedia.org/wiki/Factory_method_pattern>>
 ---
 **Iterator**. Object that allows to sort all items in the collection without taking into account the peculiarities of its implementation.
 Iterator. It represents an object that allows you to get consistent access to the elements of the object-unit without the use of an
 each of the objects included in the aggregation.
 ---
-<< https://en.wikipedia.org/wiki/Iterator_pattern >>
+<<https://en.wikipedia.org/wiki/Iterator_pattern>>
 
