@@ -52,7 +52,7 @@ Photo
 
 Fragments of the project work:
 =====================
-   `***views:***`
+   `views:`
    **index**
 ---------------------------------------------------------------------------
 ![screenshot of file contents](https://github.com/mslobodyanyuk/ModeraTest/blob/master/public/images/index.png)
@@ -70,7 +70,7 @@ Fragments of the project work:
 
 
 
-After `composer install` ModeraTest folder in the Project -> copy the contents of the folder are deleted.
+After `composer install` ModeraTest folder in the Project copy the contents of the folder and remove folder.
 ---
 PHP namespace provides the ability to group logically related classes, interfaces, functions and constants.
 Folders and namespaces must be the same, to make sure it was convenient to their classes to use in other projects, only moving the folder.
