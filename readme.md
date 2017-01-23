@@ -52,7 +52,7 @@ Photo
 
 Fragments of the project work:
 =====================
-   ***views:***
+   `***views:***`
    **index**
 ---------------------------------------------------------------------------
 ![screenshot of file contents](https://github.com/mslobodyanyuk/ModeraTest/blob/master/public/images/index.png)
@@ -80,12 +80,13 @@ On one level, with `general` `public` and create a folder `src` - it all the cla
 It create a controller, view. db-structure model in `general`, **we do not have it here**.
 
 class distribution of folders for namespaces:
+```
     src
     Factory \ GoodsFactory
     Composite \ CompositeGoods
     Iterator \ IteratorGoods
     the rest - general
-	
+```	
 
     src                        | general
 -------------------------------|----------------------
