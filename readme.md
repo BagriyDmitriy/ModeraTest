@@ -57,7 +57,7 @@ Fragments of the project work:
 ---------------------------------------------------------------------------
 ![screenshot of file contents](https://github.com/mslobodyanyuk/ModeraTest/blob/master/public/images/index.png)
 ---------------------------------------------------------------------------
-_Actually the contents of the file write.txt:_
+_Actually the contents of the file `write.txt`:_
 ```
 1 | 0 | Электроника
 2 | 0 | Видео
