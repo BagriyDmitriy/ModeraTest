@@ -2,7 +2,7 @@ A task:
 =====================
 ---------------------------------------------------------------------------
 We have a text file with structured tree information in form of:
----
+
 ```
     node_id|parent_id|node_name
     node_id: numeric node id
@@ -56,6 +56,21 @@ Fragments of the project work:
    **index**
 ---------------------------------------------------------------------------
 ![screenshot of file contents](https://github.com/mslobodyanyuk/ModeraTest/blob/master/public/images/index.png)
+Actually the contents of the file to write.txt:
+```
+1 | 0 | Электроника
+2 | 0 | Видео
+3 | 0 | Фото
+4 | 1 | MP3-плеер
+5 | 1 | ТВ
+6 | 4 | Ipod
+7 | 6 | Shuffle
+8 | 3 | SLR
+9 | 8 | DSLR
+10 | 9 | Nikon
+11 | 9 | Canon
+12 | 11 | 20D
+```
 ---------------------------------------------------------------------------
    **upload**	
 ---------------------------------------------------------------------------
