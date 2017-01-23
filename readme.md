@@ -80,19 +80,19 @@ On one level, with `general` `public` and create a folder `src` - it all the cla
 It create a controller, view. db-structure model in `general`, **we do not have it here**.
 
 class distribution of folders for namespaces:
->src
->Factory \ GoodsFactory
->Composite \ CompositeGoods
->Iterator \ IteratorGoods
->the rest - general
+    src
+    Factory \ GoodsFactory
+    Composite \ CompositeGoods
+    Iterator \ IteratorGoods
+    the rest - general
 	
----
+
     src                        | general
 -------------------------------|----------------------
     Factory \ GoodsFactory     | File \ File
     Composite \ CompositeGoods | File \ TextFile
     Iterator \ IteratorGoods   | Parser \ TextParser
----
+
 
     File, TextFile, Parser - Reusable may be used.
     GoodsFactory, CompositeGoods, IteratorGoods - only in this project.
@@ -109,7 +109,6 @@ Since the formulation of job wanted to see High Performance solution, applied us
     Iterator 
 
 **Composite**. It unites objects in a tree structure to represent the hierarchy from the private to the whole.
-
 Builder allows clients to separate objects and groups of objects equally. The main purpose of the pattern
 It is to provide a single interface to both the composite and the final object that the client did not think of, from the object of how it works.
 <https://en.wikipedia.org/wiki/Composite_pattern>
