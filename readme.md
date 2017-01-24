@@ -121,9 +121,9 @@ Design pattern - a task taken from the best practices of software development, t
 Matt Zandstra - PHP. Objects, patterns and programming techniques - 2011.
 Since the formulation of job wanted to see High Performance solution, applied use of the following design patterns:
 
-    Composite 
-    Factory Method 
-    Iterator 
+* Composite 
+* Factory Method 
+* Iterator 
 
 **Composite**. It unites objects in a tree structure to represent the hierarchy from the private to the whole.
 Builder allows clients to separate objects and groups of objects equally. The main purpose of the pattern
