@@ -104,11 +104,11 @@ class distribution of folders for namespaces:
     the rest - general
 ```	
 
-    src                        | general
--------------------------------|----------------------
-    Factory \ GoodsFactory     | File \ File
-    Composite \ CompositeGoods | File \ TextFile
-    Iterator \ IteratorGoods   | Parser \ TextParser
+src                        | general
+---------------------------|----------------------
+Factory \ GoodsFactory     | File \ File
+Composite \ CompositeGoods | File \ TextFile
+Iterator \ IteratorGoods   | Parser \ TextParser
 
 
     File, TextFile, Parser - Reusable may be used.
