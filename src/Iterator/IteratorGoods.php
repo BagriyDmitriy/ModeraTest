@@ -3,7 +3,7 @@ namespace src\Iterator;
 /*
  * Iterator class of abstracts for a single interface access to a collection.
  */
-class IteratorGoods implements IteratorInterFace{
+class IteratorGoods implements IteratorInterface{
     /**
      * @var NodeInterface
      */

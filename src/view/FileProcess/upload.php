@@ -4,7 +4,7 @@
      * upload - file download request processing
      */
         header('Content-Type: text/html; charset=utf-8');
-        require_once "..\src\controller\FileProcessController.php";
+
         $params = $controllerParams;
         if($params['success']){
             echo '- I am a view upload.php<br /><h2>File ',$params['filename'],' succesfully loaded:</h2>',

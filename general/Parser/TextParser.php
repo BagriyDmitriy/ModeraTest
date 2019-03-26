@@ -10,20 +10,21 @@ class TextParser implements TextParserInterface{
     /*
      * Method parse($text) converts text to array, result = array of 12 elements (array lines) in which the 3 element.
      */
-	public function parse($text){	
-		$lines4Parse = preg_split('/\n/',$text);
-		
-		foreach($lines4Parse as $v){	
-			$parsedLine = '';			
-			list($nodeId,$parentId,$nodeName) = explode("|", $v);			//node_id | parent_id | node_name
+	public function parse($text){
+        $linesForParse = preg_split('/\n/',$text);
+        $parsedData = [];
 
-            $parsedLine["nodeId"] = trim($nodeId);
-            $parsedLine["parentId"] = trim($parentId);
-            $parsedLine["nodeName"] = trim($nodeName);
+        foreach($linesForParse as $value){
+            list($nodeId,$parentId,$nodeName) = explode("|", $value);			//node_id | parent_id | node_name
 
-			$parsedData[] = $parsedLine;
-		}
-		return $parsedData;
+            $parsedData[] = [
+                'nodeId' => trim($nodeId),
+                'parentId' => trim($parentId),
+                'nodeName' => trim($nodeName),
+            ];
+        }
+
+        return $parsedData;
 	}					
 }
 
