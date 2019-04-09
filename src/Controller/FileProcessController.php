@@ -87,8 +87,17 @@ class FileProcessController {
 /***********Create a tree structure******************************/
 		$factory = new F\GoodsFactory();
         // Sort the array with the data so that the branches was the first.
-	    usort($dataArray, create_function('$a,$b','if ((int)$a["parentId"]===(int)$b["parentId"]) return 0;
-	     return (int)$a["parentId"]>(int)$b["parentId"] ? 1 : -1;'));
+/***********replace create_function with anonymous function*************************************************************************************************/
+        /*
+         usort($dataArray, create_function('$a,$b','if ((int)$a["parentId"]===(int)$b["parentId"]) return (int)$a["nodeId"]>(int)$b["nodeId"] ? 1 : -1;
+                    return (int)$a["parentId"]>(int)$b["parentId"] ? 1 : -1;'));
+        */
+        $func = function($a,$b) { if ((int)$a['parentId']===(int)$b['parentId']) return (int)$a['nodeId']>(int)$b['nodeId'] ? 1 : -1;
+            return (int)$a['parentId']>(int)$b['parentId'] ? 1 : -1;};
+        usort($dataArray, $func);
+
+/***********replace create_function with anonymous function*************************************************************************************************/
+
         // To create the main node through the factory.
 		$root = $factory->createRoot(array('nodeId'=>0, 'nodeName'=>'root'));
         // Gathering wood
